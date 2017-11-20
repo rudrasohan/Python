@@ -9,10 +9,9 @@ def radixsort(lst):
     buckets = [list() for _ in range( RADIX )]
 
     # split lst between lists
-    for i in lst:
-      tmp = int((i / placement) % RADIX)
-      buckets[tmp].append(i)
-
+    for  i in lst:
+      tmp = i // placement
+      buckets[tmp % RADIX].append( i )
       if maxLength and tmp > 0:
         maxLength = False
 
